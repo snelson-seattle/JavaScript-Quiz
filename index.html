@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Quiz</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">JavaScript Quiz</a> 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" id="home-btn">Home</a>
+          </li> 
+          <li class="nav-item active">
+            <a class="nav-link" id="high-score-btn">High Scores</a>
+          </li>                          
+        </ul>        
+      </div>
+    </nav>
+  </header>
+
+  <br>
+  <br>
+  <!-- Landing Page Content-->
+  <div class="container" id="landing-form">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Javascript Quiz</h1> 
+        <p>
+          This coding quiz will test your knowledge of the Javascript language. You will have 2 minutes to begin, but wrong answers will substract from this timer.
+          Correct answers are worth 5 points, while incorrect answers are worth -2 points. When you are ready to begin, press the Start button. 
+          Good Luck!
+        </p>
+      </div>       
+    </div>
+    <div class="row">
+      <div class="col-6 text-right">
+        <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+      </div>
+      <div class="col-6 text-left">
+        <button id="scores-btn" class="btn btn-primary">High Scores</button>
+      </div>
+    </div>
+    <br>
+  </div>  
+
+  <!-- Modal Window for displaying the Quiz-->
+  <div id="quiz-container" class="modal">
+    <div class="modal-content">         
+      <div class="modal-body">
+        <div class="row question-box">
+          <p class="text-center"><label id="question"></label></p>
+        </div>
+
+        <div class="row answer-box">
+          <div class="col-6">
+            <button class="a-btn btn btn-primary" data-choice="a"></button>
+            <br>
+            <button class="b-btn btn btn-primary" data-choice="b"></button>
+          </div>
+          <div class="col-6">
+            <button class="c-btn btn btn-primary" data-choice="c"></button>
+            <br>
+            <button class="d-btn btn btn-primary" data-choice="d"></button>
+          </div>
+        </div>
+
+        <div class="row status-box">
+          <div class="col-6">
+            <label>Score: </label><label id="score-lbl" class="text-center"></label>
+          </div>
+          <div class="col-6">
+            <label>Timer: </label><label id="timer-lbl"></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Window for Player Score-->
+  <div id="save-score-container" class="modal">
+    <div class="modal-content scoreboard">         
+      <div class="modal-body">
+        <h1 class="text-center">You Scored</h1>
+        <h1 class="score-hdr text-center"></h1>  
+        <h1 class="text-center">out of</h1>
+        <h1 class="text-center">50</h1> 
+        <button id="save-btn" class="btn btn-secondary">Save Score</button>
+        <br>     
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Window for High Scores-->
+  <div id="high-score-container" class="modal">
+    <div class="modal-content">         
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-center">High Scores</h1>
+            <hr>
+          </div>
+        </div>        
+        <ul id="scores-list"><!-- High Scores will be rendered here --></ul>  
+        <br>
+        <button class="btn btn-danger clear-btn">Clear Scores</button>  
+        <br>     
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Bootstrap Scripts-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+  <!-- Application Script-->
+  <script src="./script.js"></script>
+</body>
+</html>
